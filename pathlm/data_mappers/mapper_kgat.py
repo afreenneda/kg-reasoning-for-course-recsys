@@ -85,7 +85,7 @@ class MapperKGAT(MapperBase):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', type=str, default='ml1m', help='One of {ML1M, LFM1M}')
+    parser.add_argument('--data', type=str, default='coco', help='One of {mooper, mooccube}')
     parser.add_argument('--model', type=str, default='kgat', help='')
     parser.add_argument('--train_size', type=float, default=0.6, help='size of the train set expressed in 0.x')
     parser.add_argument('--valid_size', type=float, default=0.2, help='size of the valid set expressed in 0.x')
