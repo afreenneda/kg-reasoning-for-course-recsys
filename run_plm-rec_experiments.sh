@@ -6,7 +6,7 @@ for MODEL in gpt2@plm-rec  ;
 		do
 	  	for NPATHS in 250 500 1000 2000 3000 ;
 				do
-					for DATASET in  lfm1m  ml1m; 
+					for DATASET in  coco, mooper, mooccube, lfm1m  ml1m; 
 						do
 						      echo 'Tokenizing dataset-' $DATASET ' npaths-' $NPATHS ' hops-' $HOPS
 						      python3 -m pathlm.models.lm.tokenize_dataset --dataset $DATASET --sample_size $NPATHS --nproc $NPROC --n_hop $HOPS
