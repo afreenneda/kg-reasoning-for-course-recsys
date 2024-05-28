@@ -57,7 +57,7 @@ def train(args, dataset):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default=ML1M, help='One of {beauty, cd, cell, clothing}.')
+    parser.add_argument('--dataset', type=str, default=coco, help='One of {mooper, mooccube, beauty, cd, cell, clothing}.')
     parser.add_argument('--name', type=str, default='transe', help='models name.')
     parser.add_argument('--seed', type=int, default=SEED, help='random seed.')
     parser.add_argument('--gpu', type=str, default='0', help='gpu device.')
