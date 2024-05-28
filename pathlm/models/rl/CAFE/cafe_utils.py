@@ -9,7 +9,7 @@ import sys
 
 from pathlm.utils import get_weight_dir, get_weight_ckpt_dir
 
-from pathlm.knowledge_graphs.kg_macros import ML1M, LFM1M, CELL, COCO
+from pathlm.knowledge_graphs.kg_macros import ML1M, LFM1M, CELL, COCO, MOOCCUBE, MOOPER
 
 ROOT_DIR = os.environ['DATA_ROOT'] if 'DATA_ROOT' in os.environ else '.'
 
@@ -21,6 +21,8 @@ DATA_DIR = {
     LFM1M: f'{ROOT_DIR}/data/{LFM1M}/preprocessed/{MODEL}',
     CELL: f'{ROOT_DIR}/data/{CELL}/preprocessed/{MODEL}',
     COCO: f'{ROOT_DIR}/data/{COCO}/preprocessed/{MODEL}',
+    MOOCCUBE: f'{ROOT_DIR}/data/{MOOCCUBE}/preprocessed/{MODEL}',
+    MOOPER: f'{ROOT_DIR}/data/{MOOPER}/preprocessed/{MODEL}',
 }
 OPTIM_HPARAMS_METRIC = 'avg_valid_loss'
 VALID_METRICS_FILE_NAME = 'valid_metrics.json'
@@ -34,6 +36,8 @@ LOG_DATASET_DIR = {
     LFM1M: f'{LOG_DIR}/{LFM1M}/{MODEL}',
     CELL: f'{LOG_DIR}/{CELL}/{MODEL}',
     COCO: f'{LOG_DIR}/{COCO}/{MODEL}',
+    MOOCCUBE: f'{LOG_DIR}/{MOOCCUBE}/{MODEL}',
+    MOOPER: f'{LOG_DIR}/{MOOPER}/{MODEL}',
 }
 
 # for compatibility, CFG_DIR, BEST_CFG_DIR have been modified s,t, they are independent from the dataset
@@ -42,12 +46,16 @@ CFG_DIR = {
     LFM1M: f'{LOG_DATASET_DIR[LFM1M]}/hparams_cfg',
     CELL: f'{LOG_DATASET_DIR[CELL]}/hparams_cfg',
     COCO: f'{LOG_DATASET_DIR[COCO]}/hparams_cfg',
+    MOOCCUBE: f'{LOG_DATASET_DIR[MOOCCUBE]}/hparams_cfg',
+    MOOPER: f'{LOG_DATASET_DIR[MOOPER]}/hparams_cfg',
 }
 BEST_CFG_DIR = {
     ML1M: f'{LOG_DATASET_DIR[ML1M]}/best_hparams_cfg',
     LFM1M: f'{LOG_DATASET_DIR[LFM1M]}/best_hparams_cfg',
     CELL: f'{LOG_DATASET_DIR[CELL]}/best_hparams_cfg',
     COCO: f'{LOG_DATASET_DIR[COCO]}/best_hparams_cfg',
+    MOOCCUBE: f'{LOG_DATASET_DIR[MOOCCUBE]}/best_hparams_cfg',
+    MOOPER: f'{LOG_DATASET_DIR[MOOPER]}/best_hparams_cfg',
 }
 TEST_METRICS_FILE_NAME = 'test_metrics.json'
 RECOM_METRICS_FILE_NAME = 'recommender_metrics.json'
@@ -56,6 +64,8 @@ RECOM_METRICS_FILE_PATH = {
     LFM1M: f'{CFG_DIR[LFM1M]}/{RECOM_METRICS_FILE_NAME}',
     CELL: f'{CFG_DIR[CELL]}/{RECOM_METRICS_FILE_NAME}',
     COCO: f'{CFG_DIR[COCO]}/{RECOM_METRICS_FILE_NAME}',
+    MOOCCUBE: f'{CFG_DIR[MOOCCUBE]}/{RECOM_METRICS_FILE_NAME}',
+    MOOPER: f'{CFG_DIR[MOOPER]}/{RECOM_METRICS_FILE_NAME}',
 }
 
 TEST_METRICS_FILE_PATH = {
@@ -63,12 +73,16 @@ TEST_METRICS_FILE_PATH = {
     LFM1M: f'{CFG_DIR[LFM1M]}/{TEST_METRICS_FILE_NAME}',
     CELL: f'{CFG_DIR[CELL]}/{TEST_METRICS_FILE_NAME}',
     COCO: f'{CFG_DIR[COCO]}/{TEST_METRICS_FILE_NAME}',
+    MOOCCUBE: f'{CFG_DIR[MOOCCUBE]}/{TEST_METRICS_FILE_NAME}',
+    MOOPER: f'{CFG_DIR[MOOPER]}/{TEST_METRICS_FILE_NAME}',
 }
 BEST_TEST_METRICS_FILE_PATH = {
     ML1M: f'{BEST_CFG_DIR[ML1M]}/{TEST_METRICS_FILE_NAME}',
     LFM1M: f'{BEST_CFG_DIR[LFM1M]}/{TEST_METRICS_FILE_NAME}',
     CELL: f'{BEST_CFG_DIR[CELL]}/{TEST_METRICS_FILE_NAME}',
     COCO: f'{BEST_CFG_DIR[COCO]}/{TEST_METRICS_FILE_NAME}',
+    MOOCCUBE: f'{BEST_CFG_DIR[MOOCCUBE]}/{TEST_METRICS_FILE_NAME}',
+    MOOPER: f'{BEST_CFG_DIR[MOOPER]}/{TEST_METRICS_FILE_NAME}',
 }
 
 
@@ -78,12 +92,16 @@ CFG_FILE_PATH = {
     LFM1M: f'{CFG_DIR[LFM1M]}/{CONFIG_FILE_NAME}',
     CELL: f'{CFG_DIR[CELL]}/{CONFIG_FILE_NAME}',
     COCO: f'{CFG_DIR[COCO]}/{CONFIG_FILE_NAME}',
+    MOOCCUBE: f'{CFG_DIR[MOOCCUBE]}/{CONFIG_FILE_NAME}',
+    MOOPER: f'{CFG_DIR[MOOPER]}/{CONFIG_FILE_NAME}',
 }
 BEST_CFG_FILE_PATH = {
     ML1M: f'{BEST_CFG_DIR[ML1M]}/{CONFIG_FILE_NAME}',
     LFM1M: f'{BEST_CFG_DIR[LFM1M]}/{CONFIG_FILE_NAME}',
     CELL: f'{BEST_CFG_DIR[CELL]}/{CONFIG_FILE_NAME}',
     COCO: f'{BEST_CFG_DIR[COCO]}/{CONFIG_FILE_NAME}',
+    MOOCCUBE: f'{BEST_CFG_DIR[MOOCCUBE]}/{CONFIG_FILE_NAME}',
+    MOOPER: f'{BEST_CFG_DIR[MOOPER]}/{CONFIG_FILE_NAME}',
 }
 
 HPARAMS_FILE = f'{MODEL}_hparams_file.json'
@@ -94,6 +112,8 @@ TMP_DIR = {
     LFM1M: f'{DATA_DIR[LFM1M]}/tmp',
     CELL: f'{DATA_DIR[CELL]}/tmp',
     COCO: f'{DATA_DIR[COCO]}/tmp',
+    MOOCCUBE: f'{DATA_DIR[MOOCCUBE]}/tmp',
+    MOOPER: f'{DATA_DIR[MOOPER]}/tmp',
 }
 
 LABEL_FILE = {
@@ -101,6 +121,8 @@ LABEL_FILE = {
     LFM1M: (DATA_DIR[LFM1M] + '/train.txt.gz', DATA_DIR[LFM1M] + '/valid.txt.gz', DATA_DIR[LFM1M] + '/test.txt.gz'),
     CELL: (DATA_DIR[CELL] + '/train.txt.gz', DATA_DIR[CELL] + '/valid.txt.gz', DATA_DIR[CELL] + '/test.txt.gz'),
     COCO: (DATA_DIR[COCO] + '/train.txt.gz', DATA_DIR[COCO] + '/valid.txt.gz', DATA_DIR[COCO] + '/test.txt.gz'),
+    MOOCCUBE: (DATA_DIR[MOOCCUBE] + '/train.txt.gz', DATA_DIR[MOOCCUBE] + '/valid.txt.gz', DATA_DIR[MOOCCUBE] + '/test.txt.gz'),
+    MOOPER: (DATA_DIR[MOOPER] + '/train.txt.gz', DATA_DIR[MOOPER] + '/valid.txt.gz', DATA_DIR[MOOPER] + '/test.txt.gz'),
 }
 
 
