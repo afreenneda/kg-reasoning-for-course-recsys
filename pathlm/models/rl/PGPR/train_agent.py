@@ -283,7 +283,7 @@ def train(args):
     metrics.close_wandb()
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default=ML1M, help='One of {ML1M}')
+    parser.add_argument('--dataset', type=str, default=coco, help='One of {mooper, mooccube, ML1M}')
     parser.add_argument('--name', type=str, default='train_agent', help='directory name.')
     parser.add_argument('--seed', type=int, default=123, help='random seed.')
     parser.add_argument('--gpu', type=str, default='0', help='gpu device.')
