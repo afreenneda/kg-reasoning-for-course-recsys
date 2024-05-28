@@ -15,6 +15,8 @@ ML1M = 'ml1m'
 LFM1M = 'lfm1m'
 CELL = 'cellphones'
 COCO = 'coco'
+MOOCCUBE = 'mooccube'
+MOOPER = 'mooper'
 
 MODEL = 'pgpr'
 TRANSE='transe'
@@ -27,6 +29,8 @@ MODEL_DATASET_DIR = {
     LFM1M: f'{ROOT_DIR}/data/{LFM1M}/preprocessed/{MODEL}',
     CELL: f'{ROOT_DIR}/data/{CELL}/preprocessed/{MODEL}',
     COCO: f'{ROOT_DIR}/data/{COCO}/preprocessed/{MODEL}',
+    MOOCCUBE: f'{ROOT_DIR}/data/{MOOCCUBE}/preprocessed/{MODEL}',
+    MOOPER: f'{ROOT_DIR}/data/{MOOPER}/preprocessed/{MODEL}',
 }
 
 # Dataset directories.
@@ -34,6 +38,9 @@ DATASET_INFO_DIR = {
     ML1M: f'{ROOT_DIR}/data/{ML1M}/preprocessed/mapping',
     LFM1M: f'{ROOT_DIR}/data/{LFM1M}/preprocessed/mapping',
     CELL: f'{ROOT_DIR}/data/{CELL}/preprocessed/mapping',
+    COCO: f'{ROOT_DIR}/data/{COCO}/preprocessed/mapping',
+    MOOCCUBE: f'{ROOT_DIR}/data/{MOOCCUBE}/preprocessed/mapping',
+    MOOPER: f'{ROOT_DIR}/data/{MOOPER}/preprocessed/mapping',
 }
 
 
@@ -49,6 +56,8 @@ LOG_DATASET_DIR = {
     LFM1M: f'{LOG_DIR}/{LFM1M}/{MODEL}',
     CELL: f'{LOG_DIR}/{CELL}/{MODEL}',
     COCO: f'{LOG_DIR}/{COCO}/{MODEL}',
+    MOOCCUBE: f'{LOG_DIR}/{MOOCCUBE}/{MODEL}',
+    MOOPER: f'{LOG_DIR}/{MOOPER}/{MODEL}',
 }
 
 # for compatibility, CFG_DIR, BEST_CFG_DIR have been modified s,t, they are independent from the dataset
@@ -57,12 +66,16 @@ CFG_DIR = {
     LFM1M: f'{LOG_DATASET_DIR[LFM1M]}/hparams_cfg',
     CELL: f'{LOG_DATASET_DIR[CELL]}/hparams_cfg',
     COCO: f'{LOG_DATASET_DIR[COCO]}/hparams_cfg',
+    MOOCCUBE: f'{LOG_DATASET_DIR[MOOCCUBE]}/hparams_cfg',
+    MOOPER: f'{LOG_DATASET_DIR[MOOPER]}/hparams_cfg',
 }
 BEST_CFG_DIR = {
     ML1M: f'{LOG_DATASET_DIR[ML1M]}/best_hparams_cfg',
     LFM1M: f'{LOG_DATASET_DIR[LFM1M]}/best_hparams_cfg',
     CELL: f'{LOG_DATASET_DIR[CELL]}/best_hparams_cfg',
     COCO: f'{LOG_DATASET_DIR[COCO]}/best_hparams_cfg',
+    MOOCCUBE: f'{LOG_DATASET_DIR[MOOCCUBE]}/best_hparams_cfg',
+    MOOPER: f'{LOG_DATASET_DIR[MOOPER]}/best_hparams_cfg',
 }
 TEST_METRICS_FILE_NAME = 'test_metrics.json'
 RECOM_METRICS_FILE_NAME = 'recommender_metrics.json'
@@ -71,17 +84,26 @@ RECOM_METRICS_FILE_PATH = {
     ML1M: f'{CFG_DIR[ML1M]}/{RECOM_METRICS_FILE_NAME}',
     LFM1M: f'{CFG_DIR[LFM1M]}/{RECOM_METRICS_FILE_NAME}',
     CELL: f'{CFG_DIR[CELL]}/{RECOM_METRICS_FILE_NAME}',
+    COCO: f'{CFG_DIR[COCO]}/{RECOM_METRICS_FILE_NAME}',
+    MOOCCUBE: f'{CFG_DIR[MOOCCUBE]}/{RECOM_METRICS_FILE_NAME}',
+    MOOPER: f'{CFG_DIR[MOOPER]}/{RECOM_METRICS_FILE_NAME}',
 }
 
 TEST_METRICS_FILE_PATH = {
     ML1M: f'{CFG_DIR[ML1M]}/{TEST_METRICS_FILE_NAME}',
     LFM1M: f'{CFG_DIR[LFM1M]}/{TEST_METRICS_FILE_NAME}',
     CELL: f'{CFG_DIR[CELL]}/{TEST_METRICS_FILE_NAME}',
+    COCO: f'{CFG_DIR[COCO]}/{TEST_METRICS_FILE_NAME}',
+    MOOCCUBE: f'{CFG_DIR[MOOCCUBE]}/{TEST_METRICS_FILE_NAME}',
+    MOOPER: f'{CFG_DIR[MOOPER]}/{TEST_METRICS_FILE_NAME}',
 }
 BEST_TEST_METRICS_FILE_PATH = {
     ML1M: f'{BEST_CFG_DIR[ML1M]}/{TEST_METRICS_FILE_NAME}',
     LFM1M: f'{BEST_CFG_DIR[LFM1M]}/{TEST_METRICS_FILE_NAME}',
     CELL: f'{BEST_CFG_DIR[CELL]}/{TEST_METRICS_FILE_NAME}',
+    COCO: f'{BEST_CFG_DIR[COCO]}/{TEST_METRICS_FILE_NAME}',
+    MOOCCUBE: f'{BEST_CFG_DIR[MOOCCUBE]}/{TEST_METRICS_FILE_NAME}',
+    MOOPER: f'{BEST_CFG_DIR[MOOPER]}/{TEST_METRICS_FILE_NAME}',
 }
 
 
@@ -90,11 +112,17 @@ CFG_FILE_PATH = {
     ML1M: f'{CFG_DIR[ML1M]}/{CONFIG_FILE_NAME}',
     LFM1M: f'{CFG_DIR[LFM1M]}/{CONFIG_FILE_NAME}',
     CELL: f'{CFG_DIR[CELL]}/{CONFIG_FILE_NAME}',
+    COCO: f'{CFG_DIR[COCO]}/{CONFIG_FILE_NAME}',
+    MOOCCUBE: f'{CFG_DIR[MOOCCUBE]}/{CONFIG_FILE_NAME}',
+    MOOPER: f'{CFG_DIR[MOOPER]}/{CONFIG_FILE_NAME}',
 }
 BEST_CFG_FILE_PATH = {
     ML1M: f'{BEST_CFG_DIR[ML1M]}/{CONFIG_FILE_NAME}',
     LFM1M: f'{BEST_CFG_DIR[LFM1M]}/{CONFIG_FILE_NAME}',
     CELL: f'{BEST_CFG_DIR[CELL]}/{CONFIG_FILE_NAME}',
+    COCO: f'{BEST_CFG_DIR[COCO]}/{CONFIG_FILE_NAME}',
+    MOOCCUBE: f'{BEST_CFG_DIR[MOOCCUBE]}/{CONFIG_FILE_NAME}',
+    MOOPER: f'{BEST_CFG_DIR[MOOPER]}/{CONFIG_FILE_NAME}',
 }
 
 TRANSE_HPARAMS_FILE = f'transe_{MODEL}_hparams_file.json'
@@ -106,6 +134,8 @@ TMP_DIR = {
     LFM1M: f'{MODEL_DATASET_DIR[LFM1M]}/tmp',
     CELL: f'{MODEL_DATASET_DIR[CELL]}/tmp',
     COCO: f'{MODEL_DATASET_DIR[COCO]}/tmp',
+    MOOCCUBE: f'{MODEL_DATASET_DIR[MOOCCUBE]}/tmp',
+    MOOPER: f'{MODEL_DATASET_DIR[MOOPER]}/tmp',
 }
 
 # Label files.
@@ -114,7 +144,10 @@ LABELS = {
     LFM1M: (TMP_DIR[LFM1M] + '/train_label.pkl', TMP_DIR[LFM1M] + '/valid_label.pkl', TMP_DIR[LFM1M] + '/test_label.pkl'),
     CELL: (TMP_DIR[CELL] + '/train_label.pkl', TMP_DIR[CELL] + '/valid_label.pkl', TMP_DIR[CELL] + '/test_label.pkl'),
     COCO: (TMP_DIR[COCO] + '/train_label.pkl', TMP_DIR[COCO] + '/valid_label.pkl', TMP_DIR[COCO] + '/test_label.pkl'),
+    MOOCCUBE: (TMP_DIR[MOOCCUBE] + '/train_label.pkl', TMP_DIR[MOOCCUBE] + '/valid_label.pkl', TMP_DIR[MOOCCUBE] + '/test_label.pkl'),
+    MOOPER: (TMP_DIR[MOOPER] + '/train_label.pkl', TMP_DIR[MOOPER] + '/valid_label.pkl', TMP_DIR[MOOPER] + '/test_label.pkl'),
 }
+
 
 def get_logger(logname):
     logger = logging.getLogger(logname)
