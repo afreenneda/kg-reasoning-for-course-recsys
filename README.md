@@ -1,21 +1,24 @@
-# PERLM: Faithful Path-Based Explainable Recommendation via Language
-This repository contains the source code of the submitted paper "PERLM: Faithful Path-Based Explainable Recommendation via Language
-Modeling over Knowledge Graphs".
+#Explainable Recommendation through Knowledge Graphs in Education
 
-If this repository IS useful for your research, we would appreciate an acknowledgment by citing our paper:
+##Overview
+The base workflow is:
 
-```
-Balloccu, Giacomo, Ludovico Boratto, Christian Cancedda, Gianni Fenu, and Mirko Marras. 
-"Faithful Path Language Modelling for Explainable Recommendation over Knowledge Graph." arXiv preprint arXiv:2310.16452 (2023).
-```
+Dataset creation
+
+Dataset preprocessing and formatting with respect to the selected model
+
+Training(or hyperparameter search) of the TransE embedding model
+
+Training(or hyperparameter search) of the Recommender model
+
+Test of the quality of the recommender model
+
+Evaluation of the metrics
 
 ## Requirements
 - Python 3.8
 
-Install the required packages:
-```pip install -r requirements.txt```
-
-Download the datasets and the **embeddings**(to run the plm-rec implementation) from the **data.zip** and **embedding-weights.zip** archive at the drive repository: https://drive.google.com/drive/folders/1e0uFWb6iJ6MXHtslZsqV8qRYC0Pl_AR7?usp=sharing
+Download the datasets and the **embeddings** from the drive repository: https://drive.google.com/drive/folders/1MAxH1HbowFU7uJeegtVbMZgVTIuVAmMq?usp=drive_link
 Then extract both **data.zip** and **embedding-weights.zip** inside the **top level** of the repository (i.e. the level in which setup.py is located). 
 
 ## Usage
@@ -36,7 +39,7 @@ pip install .
 To create the `preprocessed/mapping` folder needed by the random walk algorithm, run from the top level:
 
 ```
-python pathlm/data_mappers/map_dataset.py --data <dataset_name> --model pearlm
+python pathlm/data_mappers/map_dataset.py --data <dataset_name> --model <model_name>
 ```
 
 To generate all datasets, run from the top level:
