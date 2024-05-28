@@ -458,11 +458,11 @@
                 "product"
             ],
             [
-                "related_to_concept",
+                "covers_in_concept",
                 "concept"
             ],
             [
-                "related_to_concept",
+                "covers_in_concept",
                 "product"
             ]
         ],
@@ -537,6 +537,175 @@
                 "belongs_to_category",
                 "product"
             ]
+        ],
+        "7": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "taught_by_instructor",
+                "instructor"
+            ],
+            [
+                "taught_by_instructor",
+                "product"
+            ]
         ]
+    },
+    "mooccube": {
+        "0": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "interacted",
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ]
+        ],
+        "2": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "covers_in_concept",
+                "concept"
+            ],
+            [
+                "covers_in_concept",
+                "product"
+            ]
+        ],
+        "3": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "taught_by_instructor",
+                "instructor"
+            ],
+            [
+                "taught_by_instructor",
+                "product"
+            ]
+        ],
+        "4": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "Held_by_EducationalOrganization",
+                "EducationalOrganization"
+            ],
+            [
+                "Held_by_EducationalOrganization",
+                "product"
+            ]
+
+        ]
+
+    },
+    "mooper": {
+        "0": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "interacted",
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ]
+        ],
+        "2": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "covers_in_concept",
+                "concept"
+            ],
+            [
+                "covers_in_concept",
+                "product"
+            ]
+        ],
+        "3": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "taught_by_instructor",
+                "instructor"
+            ],
+            [
+                "taught_by_instructor",
+                "product"
+            ]
+        ],
+        "4": [
+            [
+                null,
+                "user"
+            ],
+            [
+                "interacted",
+                "product"
+            ],
+            [
+                "includes_in_learningresources",
+                "learningresources"
+            ],
+            [
+                "includes_in_learningresources",
+                "product"
+            ]
+        ]
+
     }
 }
