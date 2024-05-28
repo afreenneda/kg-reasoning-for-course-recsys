@@ -38,7 +38,7 @@ pip install .
 ### 1. Path Dataset generation
 To create the `preprocessed/mapping` folder needed by the random walk algorithm, run from the top level:
 
-```
+```sh
 python pathlm/data_mappers/map_dataset.py --data <dataset_name> --model <model_name>
 ```
 
