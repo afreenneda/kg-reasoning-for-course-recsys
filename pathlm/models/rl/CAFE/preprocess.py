@@ -19,6 +19,7 @@ def load_kg_embedding(dataset: str):
                          :-1]  # remove last dummy embed with 0 values.
         print(f'>>> {entity}: {embeds[entity].shape}')
     for rel in RELATION_LIST[dataset]:
+        print(rel)
         embeds[rel] = (
             state_dict[rel].cpu().data.numpy()[0],
             state_dict[rel + '_bias.weight'].cpu().data.numpy()
