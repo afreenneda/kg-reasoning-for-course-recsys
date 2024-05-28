@@ -70,7 +70,7 @@ class EmbeddingMapper:
 
 def get_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, default="ml1m", help="{ml1m, lfm1m}")
+    parser.add_argument("--dataset", type=str, default="coco", help="{mooper, mooccube, ml1m, lfm1m}")
     parser.add_argument("--model", type=str, default="distilgpt2", help="Model to use from HuggingFace pretrained models")
     parser.add_argument("--context_length", type=int, default=100,
                         help="Context length value when training a tokenizer from scratch")
