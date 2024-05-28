@@ -4,7 +4,7 @@ for hops in 3 5;
   do
   	for npaths in  250 500 1000 1500 2000 2500 3000 10000 ;
 			do
-	  		for dataset in ml1m lfm1m;
+	  		for dataset in coco, mooccube, mooper, ml1m lfm1m;
 					do			
 						echo 'Creating: dataset-' $dataset ' npaths-' $npaths ' hops-' $hops
 						bash create_dataset.sh $dataset $npaths $hops $NPROC
