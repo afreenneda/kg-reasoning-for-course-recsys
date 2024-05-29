@@ -58,7 +58,7 @@ def is_faithful(path, tokenizer, kg, relid_to_type, eid_to_name):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default='distilgpt2', help='which model to evaluate')
-    parser.add_argument('--dataset', type=str, default='ml1m', help='which dataset evaluate')
+    parser.add_argument('--dataset', type=str, default='coco', help='which dataset evaluate')
     parser.add_argument('--sample_size', default='250', type=str,
                         help='')
     parser.add_argument('--n_hop', default='3', type=str, help='')
