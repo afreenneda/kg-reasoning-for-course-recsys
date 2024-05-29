@@ -1,5 +1,6 @@
-!/data/ml1m/preprocessed/*
-!/data/lfm1m/preprocessed/*
+!/data/coco/preprocessed/*
+!/data/mooccube/preprocessed/*
+!/data/mooper/preprocessed/*
 results/*
 .idea
 .ipynb_checkpoints
