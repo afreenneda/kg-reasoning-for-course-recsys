@@ -182,6 +182,6 @@ def test_kgmask(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='beauty', help='One of {clothing, cell, beauty, cd}')
+    parser.add_argument('--dataset', type=str, default='coco', help='One of {mooper, mooccube, clothing, cell, beauty, cd}')
     parser.add_argument('--batch_size', type=int, default=128, help='batch size')
     args = parser.parse_args()
