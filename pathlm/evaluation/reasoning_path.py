@@ -124,8 +124,8 @@ class TopkReasoningPaths:
             unique_path_patter.add('_'.join(path.pattern))
         return len(unique_path_patter) / min(len(self.topk), self.max_path_pattern)
     """
-     # (self_loop user 0) (watched movie 2408) (watched user 1953) (watched movie 277) #hop3
-     # (self_loop user 0) (mention word 2408) (described_as product 1953) (self_loop product 1953) #hop2
+     # (self_loop user 0) (interacted course 2408) (interacted user 1953) (interacted course 277) #hop3
+
      def template_single(self):
           path = self.path
           if path[0] == "self_loop":
