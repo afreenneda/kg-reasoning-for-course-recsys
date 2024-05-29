@@ -7,8 +7,8 @@ from pathlm.utils import get_weight_dir, get_weight_ckpt_dir
 MODEL = 'cke'
 def parse_args():
     parser = argparse.ArgumentParser(description=F"Run {MODEL}.")
-    parser.add_argument('--dataset', nargs='?', default='ml1m',
-                        help='Choose a dataset from {ml1m, lfm1m}')
+    parser.add_argument('--dataset', nargs='?', default='coco',
+                        help='Choose a dataset from {mooper, mooccube, ml1m}')
     parser.add_argument('--pretrain', type=int, default=0,
                         help='0: No pretrain, -1: Pretrain with the learned embeddings, 1:Pretrain with stored models.')
     parser.add_argument(
