@@ -18,8 +18,8 @@ Evaluation of the metrics
 ## Requirements
 - Python 3.8
 
-Download the datasets and the **embeddings** from the drive repository: https://drive.google.com/drive/folders/1MAxH1HbowFU7uJeegtVbMZgVTIuVAmMq?usp=drive_link
-Then extract both **data.zip** and **embedding-weights.zip** inside the **top level** of the repository (i.e. the level in which setup.py is located). 
+Download the datasets from the drive repository: https://drive.google.com/drive/folders/1MAxH1HbowFU7uJeegtVbMZgVTIuVAmMq?usp=drive_link
+Then extract **data.zip** inside the **top level** of the repository (i.e. the level in which setup.py is located). 
 
 ## Usage
 ##### Design philosophy: 
