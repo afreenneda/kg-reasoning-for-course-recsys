@@ -482,19 +482,32 @@ if __name__ == '__main__':
     ML1M = 'ml1m'
     LFM1M ='lfm1m'
     CELL='cellphones'
+    MOOCCUBE = 'mooccube'
     ROOT_DIR = os.environ('TREX_DATA_ROOT') if 'TREX_DATA_ROOT' in os.environ else '../..'
     # Dataset directories.
     DATA_DIR = {
         ML1M: f'{ROOT_DIR}/data/{ML1M}/preprocessed/{MODEL}',
         LFM1M: f'{ROOT_DIR}/data/{LFM1M}/preprocessed/{MODEL}',
-        CELL: f'{ROOT_DIR}/data/{CELL}/preprocessed/{MODEL}'
+        CELL: f'{ROOT_DIR}/data/{CELL}/preprocessed/{MODEL}',
+        MOOCCUBE: f'{ROOT_DIR}/data/{MOOCCUBE}/preprocessed/{MODEL}',
+        COCO: f'{ROOT_DIR}/data/{COCO}/preprocessed/{MODEL}',
+        MOOPER: f'{ROOT_DIR}/data/{MOOPER}/preprocessed/{MODEL}'
     }
     dataset_name = 'ml1m'
     dirpath = DATA_DIR[dataset_name]
     ml1m_kg = KGsampler(dirpath)
+    dataset_name = 'coco'
+    dirpath = DATA_DIR[dataset_name]
+    coco_kg = KGsampler(dirpath)
     dataset_name = 'lfm1m'
     dirpath = DATA_DIR[dataset_name]
     lfm1m_kg = KGsampler(dirpath)
+    dataset_name = 'mooccube'
+    dirpath = DATA_DIR[dataset_name]
+    mooccube_kg = KGsampler(dirpath)
+    dataset_name = 'mooper'
+    dirpath = DATA_DIR[dataset_name]
+    mooper_kg = KGsampler(dirpath)
 
 
 
