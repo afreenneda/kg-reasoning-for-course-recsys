@@ -135,7 +135,7 @@ if __name__ == "__main__":
     # Data arguments
     parser.add_argument("--exp_name", type=str, default='default')
     parser.add_argument('--wandb', default=False, action='store_true')    
-    parser.add_argument("--dataset", type=str, default="ml1m", help="{ml1m, lfm1m}")
+    parser.add_argument("--dataset", type=str, default="coco", help="{mooper, mooccube, ml1m, lfm1m}")
     parser.add_argument("--task", type=str, default="end-to-end", help="{pretrain, end-to-end}")
 
     parser.add_argument("--sample_size", type=str, default="250",
