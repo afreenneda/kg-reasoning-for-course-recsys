@@ -19,8 +19,6 @@ def entity2plain_text(dataset_name, model_name):
     return entity2name
 
 
-# (self_loop user 0) (watched movie 2408) (watched user 1953) (watched movie 277) #hop3
-# (self_loop user 0) (mention word 2408) (described_as product 1953) (self_loop product 1953) #hop2
 def get_linked_interaction_triple(path):
     linked_interaction_id, linked_interaction_rel, linked_interaction_type = path[1][-1], path[1][0], path[1][1]
     return linked_interaction_id, linked_interaction_rel, linked_interaction_type
