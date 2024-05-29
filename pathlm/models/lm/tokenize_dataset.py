@@ -24,7 +24,7 @@ def tokenize_function(examples: str, context_length: int = 200):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # Data arguments
-    parser.add_argument("--dataset", type=str, default="ml1m", help="{ml1m, lfm1m}")
+    parser.add_argument("--dataset", type=str, default="coco", help="{mooper, mooccube, ml1m, lfm1m}")
     parser.add_argument("--task", type=str, default="end-to-end", help="{pretrain, end-to-end}")
     parser.add_argument("--sample_size", type=str, default="250",
                         help="Number of sampled path in the chosen dataset")
