@@ -4,7 +4,7 @@ import torch
 import torch.optim as optim
 
 from pathlm.datasets.kg_dataset_base import KARSDataset
-from pathlm.knowledge_graphs.kg_macros import ML1M, LFM1M, CELL
+from pathlm.knowledge_graphs.kg_macros import ML1M, LFM1M, CELL, COCO, MOOPER, MOOCCUBE
 from pathlm.models.embeddings.kge_data_loader import KGEDataLoader
 from pathlm.models.embeddings.kge_utils import get_log_dir, get_logger, get_embedding_ckpt_rootdir
 from pathlm.models.embeddings.transe_model import TransE
