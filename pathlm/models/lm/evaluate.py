@@ -233,7 +233,7 @@ def get_best_checkpoint(model_folder):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, default="ml1m", help="{ml1m, lfm1m}")
+    parser.add_argument("--dataset", type=str, default="coco", help="{mooper, mooccube, ml1m, lfm1m}")
     parser.add_argument("--task", type=str, default="end-to-end", help="{pretrain, finetune, end-to-end}")
     parser.add_argument("--loading_checkpoint", type=bool, default=False, help="True to load checkpoint False to load from model-weights")
     parser.add_argument("--sample_size", type=str, default="1000",
