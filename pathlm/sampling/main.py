@@ -16,7 +16,7 @@ def none_or_int(value):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default=LFM1M, help='One of {ml1m, lfm1m}')
+    parser.add_argument('--dataset', type=str, default=coco, help='One of {mooccube, mooper, ml1m, lfm1m}')
     parser.add_argument('--root_dir', type=str, default='./', help='Working directory to use to compute the datasets')
     parser.add_argument('--data_dirname', type=str, default='data', help='Directory name to use to store the datasets')
     parser.add_argument('--max_n_paths', type=int, default=100, help='Max number of paths sampled for each user.')
