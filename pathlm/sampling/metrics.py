@@ -88,19 +88,22 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     #parser.add_argument('--dataset', type=str, default=LFM1M, help='One of {ml1m, lfm1m}')
     #parser.add_argument('--dataset_path', type=str, help='One of {ml1m, lfm1m}')
-
-
-
     args = parser.parse_args()
     ML1M = 'ml1m'
     LFM1M ='lfm1m'
+    COCO ='coco'
+    MOOPER ='mooper'
+    MOOCCUBE ='mooccube'
     CELL='cellphones'
     ROOT_DIR = '..'
     # Dataset directories.
     DATA_DIR = {
         ML1M: f'{ROOT_DIR}/data/{ML1M}/preprocessed',
         LFM1M: f'{ROOT_DIR}/data/{LFM1M}/preprocessed',
-        CELL: f'{ROOT_DIR}/data/{CELL}/preprocessed'
+        CELL: f'{ROOT_DIR}/data/{CELL}/preprocessed',
+        COCO: f'{ROOT_DIR}/data/{COCO}/preprocessed',
+        MOOPER: f'{ROOT_DIR}/data/{MOOPER}/preprocessed',
+        MOOCCUBE: f'{ROOT_DIR}/data/{MOOCCUBE}/preprocessed'
     }
     #dirpath = DATA_DIR[args.dataset]
     #randwalk_filepath = os.path.join(*dirpath.split('/')[:-1], 'paths_random_walk', 'paths.txt')
@@ -152,22 +155,4 @@ if __name__ == '__main__':
 
 
 
-    '''
-    paths = []
-    with open(randwalk_filepath) as f:
-        for line in f:
-            data = line.rstrip().split(' ')
-            paths.append(data)
-    print(paths[:5])
-
-
-    res1 = item_coverage(stats_kg, paths)
-    res2 = catalog_coverage(stats_kg, paths)
-    print('Item coverage(end item only): ', res1)
-    print('Catalog coverage(end item only): ', res2)
-    res1 = item_coverage(stats_kg, paths, end_item=False)
-    res2 = catalog_coverage(stats_kg, paths,  end_item=False)
-    print('Item coverage(all items in path): ', res1)
-    print('Catalog coverage(all items in path): ', res2)
-
-    '''
+   
