@@ -19,7 +19,8 @@ Run:
 pip install .
 ```
 ### 1.Models
-- DATASET_NAME {coco, mooper, mooccube} MODEL_NAMES:
+- DATASET_NAME {coco, mooper, mooccube}
+- MODEL_NAMES:
 - traditional methods{nfm, bprmf}
 - knowledge aware methods{cke, kgat}
 - path based methods{pgpr, cafe}
