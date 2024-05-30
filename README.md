@@ -154,15 +154,15 @@ CAFE
 
 KGAT
 - adj_type: weighting technique applied to each connection on the KG adjacency matrix A
--- bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
--- single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
+   - bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
+   - single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
 - embed_size: size of user and entity embeddings
 - kge_size: size of the relation embeddings
 
 CKE
 - adj_type (weighting technique applied to each connection on the KG adjacency matrix A )
--- bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
--- single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
+   - bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
+   - single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
 - embed_size (size of user and entity embeddings)
 - kge_size (size of the relation embeddings)
 
@@ -188,37 +188,37 @@ Optimal hyper parameters:
 Each model is configured with a set of optimal hyper parameters, according to the dataset upon which it is trained. In order to train a given model with customized hyper parameters, it is necessary to set them from command line. Each can be set by adding as new command line arguments the pair (--param_name param_value) while also specifying the model_name and the dataset to use.
 
 PGPR
--- hidden [512,256]
--- ent_weight 0.001
+ - hidden [512,256]
+ - ent_weight 0.001
 
 CAFE
--- embed_size 200
--- rank_weight 1.0
+ - embed_size 200
+ - rank_weight 1.0
 
 KGAT
--- adj_type si
--- embed_size 64
--- kge_size 64
+ - adj_type si
+ - embed_size 64
+ - kge_size 64
 
 CKE
--- adj_type si
--- embed_size 64
--- kge_size 64
+ - adj_type si
+ - embed_size 64
+ - kge_size 64
 
 PLM
--- num_epochs: 5
--- model: distilgpt2
--- batch_size: 512
--- sample_size: 250
--- n_hop: 3
--- logit_processor_type: Decoding strategy empty for PLM
--- n_seq_infer: 30
+ - num_epochs: 5
+ - model: distilgpt2
+ - batch_size: 512
+ - sample_size: 250
+ - n_hop: 3
+ - logit_processor_type: Decoding strategy empty for PLM
+ - n_seq_infer: 30
 
 PEARLM
--- num_epochs: 5
--- model: distilgpt2
--- batch_size: 512
--- sample_size: 250
--- n_hop: 3
--- logit_processor_type: Decoding strategy 'gcd'
--- n_seq_infer: 30
+ - num_epochs: 5
+ - model: distilgpt2
+ - batch_size: 512
+ - sample_size: 250
+ - n_hop: 3
+ - logit_processor_type: Decoding strategy 'gcd'
+ - n_seq_infer: 30
