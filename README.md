@@ -2,8 +2,7 @@
 
 ## Requirements
 - Python 3.8
-- 
-Install the required packages:
+- Install the required packages:
 ```sh
 pip install -r requirements.txt 
 ```
@@ -20,11 +19,11 @@ Run:
 pip install .
 ```
 ### 1.Models
-DATASET_NAME {coco, mooper, mooccube} MODEL_NAMES:
-traditional methods{nfm, bprmf}
-knowledge aware methods{cke, kgat}
-path based methods{pgpr, cafe}
-casual language models{plm, pearlm}
+- DATASET_NAME {coco, mooper, mooccube} MODEL_NAMES:
+- traditional methods{nfm, bprmf}
+- knowledge aware methods{cke, kgat}
+- path based methods{pgpr, cafe}
+- casual language models{plm, pearlm}
 
 ### 2. Dataset generation
 To create the `preprocessed/mapping` folder needed by the algorithm, run from the top level:
@@ -75,7 +74,8 @@ learn the policy by executing:
 
 ##### Casual Language Modeling for Path Reasoning
 ### Path Sampling
-Sampling can be employed by running ```sh
+Sampling can be employed by running 
+```sh
  create_dataset.sh
 ```
 script and specify the positional parameters:
