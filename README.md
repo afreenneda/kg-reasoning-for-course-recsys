@@ -145,80 +145,80 @@ This list collects the formulas and short descriptions of the metrics currently 
 The hyper parameters that have been considered in the grid search are listed below, alongside a brief description and its codename used in the experiments:
 
 PGPR
--hidden : number of hidden units of each layer of the shared embedding neural network, that is used as a backbone by the actor and the critic prediction heads
--ent_weight: weight of the entropy loss that quantifies entropy in the action distribution
+- hidden : number of hidden units of each layer of the shared embedding neural network, that is used as a backbone by the actor and the critic prediction heads
+- ent_weight: weight of the entropy loss that quantifies entropy in the action distribution
 
 CAFE
--embed_size: size of the embedding of entities and relations for neural modules employed by CAFE's symbolic model
--rank_weight: weight of the ranking loss component in the total loss.
+- embed_size: size of the embedding of entities and relations for neural modules employed by CAFE's symbolic model
+- rank_weight: weight of the ranking loss component in the total loss.
 
 KGAT
--adj_type: weighting technique applied to each connection on the KG adjacency matrix A
---bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
---single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
--embed_size: size of user and entity embeddings
--kge_size: size of the relation embeddings
+- adj_type: weighting technique applied to each connection on the KG adjacency matrix A
+-- bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
+-- single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
+- embed_size: size of user and entity embeddings
+- kge_size: size of the relation embeddings
 
 CKE
--adj_type (weighting technique applied to each connection on the KG adjacency matrix A )
---bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
---single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
--embed_size (size of user and entity embeddings)
--kge_size (size of the relation embeddings)
+- adj_type (weighting technique applied to each connection on the KG adjacency matrix A )
+-- bilateral (bi), pre and post multiply A by the inverse of the square root of the diagonal matrix of out degrees of each node
+-- single (si), pre multiply A by the inverse of the of the diagonal matrix of out degrees of each node
+- embed_size (size of user and entity embeddings)
+- kge_size (size of the relation embeddings)
 
 PLM
--num_epochs: Max number of epochs.
--model: The base huggingface model from where eredit the architecture one from {distilgpt2, gpt2, gpt2-large}
--batch_size: Batch size.
--sample_size: Dataset sample size (to dermine which dataset to use)
--n_hop: Dataset hop size (to dermine which dataset to use)
--logit_processor_type: Decoding strategy empty for PLM
--n_seq_infer: Number of sequences generated for each user should be > k
+- num_epochs: Max number of epochs.
+- model: The base huggingface model from where eredit the architecture one from {distilgpt2, gpt2, gpt2-large}
+- batch_size: Batch size.
+- sample_size: Dataset sample size (to dermine which dataset to use)
+- n_hop: Dataset hop size (to dermine which dataset to use)
+- logit_processor_type: Decoding strategy empty for PLM
+- n_seq_infer: Number of sequences generated for each user should be > k
 
 PEARLM
--num_epochs: Max number of epochs.
--model: The base huggingface model from where eredit the architecture one from {distilgpt2, gpt2, gpt2-large}
--batch_size: Batch size.
--sample_size: Dataset sample size (to dermine which dataset to use)
--n_hop: Dataset hop size (to dermine which dataset to use)
--logit_processor_type: Decoding strategy 'gcd' for PEARLM
--n_seq_infer: Number of sequences generated for each user should be > k
+- num_epochs: Max number of epochs.
+- model: The base huggingface model from where eredit the architecture one from {distilgpt2, gpt2, gpt2-large}
+- batch_size: Batch size.
+- sample_size: Dataset sample size (to dermine which dataset to use)
+- n_hop: Dataset hop size (to dermine which dataset to use)
+- logit_processor_type: Decoding strategy 'gcd' for PEARLM
+- n_seq_infer: Number of sequences generated for each user should be > k
 
 Optimal hyper parameters:
 Each model is configured with a set of optimal hyper parameters, according to the dataset upon which it is trained. In order to train a given model with customized hyper parameters, it is necessary to set them from command line. Each can be set by adding as new command line arguments the pair (--param_name param_value) while also specifying the model_name and the dataset to use.
 
 PGPR
-hidden [512,256]
-ent_weight 0.001
+-- hidden [512,256]
+-- ent_weight 0.001
 
 CAFE
-embed_size 200
-rank_weight 1.0
+-- embed_size 200
+-- rank_weight 1.0
 
 KGAT
-adj_type si
-embed_size 64
-kge_size 64
+-- adj_type si
+-- embed_size 64
+-- kge_size 64
 
 CKE
-adj_type si
-embed_size 64
-kge_size 64
+-- adj_type si
+-- embed_size 64
+-- kge_size 64
 
 PLM
--num_epochs: 5
--model: distilgpt2
--batch_size: 512
--sample_size: 250
--n_hop: 3
--logit_processor_type: Decoding strategy empty for PLM
--n_seq_infer: 30
+-- num_epochs: 5
+-- model: distilgpt2
+-- batch_size: 512
+-- sample_size: 250
+-- n_hop: 3
+-- logit_processor_type: Decoding strategy empty for PLM
+-- n_seq_infer: 30
 
 PEARLM
--num_epochs: 5
--model: distilgpt2
--batch_size: 512
--sample_size: 250
--n_hop: 3
--logit_processor_type: Decoding strategy 'gcd'
--n_seq_infer: 30
+-- num_epochs: 5
+-- model: distilgpt2
+-- batch_size: 512
+-- sample_size: 250
+-- n_hop: 3
+-- logit_processor_type: Decoding strategy 'gcd'
+-- n_seq_infer: 30
