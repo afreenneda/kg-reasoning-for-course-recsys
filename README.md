@@ -102,8 +102,19 @@ python pathlm/models/lm/plm_main.py --data {dataset_name} --sample_size {sample_
 
 
 ##### PERLM
-To train a specific PEARLM, run from the top level:
+To train PEARLM, run from the top level:
 ```
 python pathlm/models/lm/pearlm_main.py --data {dataset_name} --sample_size {sample_size} --n_hop {n_hop} --nproc {n_proc}
 ```
+
+##### Metrics
+This list collects the formulas and short descriptions of the metrics currently implemented by the evaluation module. All recommendation metrics are calculated for a user top-k.
+
+#### Recommendation Quality
+- NDCG: The extent to which the recommended products are useful for the user. Weights the position of the item in the top-k. $$NDCG@k=\frac{DCG@k}{IDCG@k}$$ where: $$DCG@k=\sum_{i=1}^{k}\frac{rel_i}{log_2(i+1)}=rel_1+\sum_{i=2}^{k}\frac{rel_i}{log_2(i+1)}$$ $$IDCG@k = \text{sort descending}(rel)$$
+- MMR: The extent to which the first recommended product is useful for the user. $$MMR = \frac{1}{\text{first hit position}}$$
+- Coverage: Proportion of items recommended among all the item catalog. $$\frac{| \text{Unique Recommended items}|}{| \text{Items in Catalog} |}$$
+- Diversity: Proportion of genres covered by the recommended items among the recommended items. $$\frac{| \text{Unique Genres} |}{| \text{Recommended items} |}$$
+- Novelty: Inverse of popularity of the items recommended to the user $$\frac{\sum_{i \in I}| 1 - \text{Pop}(i) |}{| \text{Recommended items} |}$$
+- Serendipity: Proportion of items which may be surprising for the user, calculated as the the proportion of items recommended by the benchmarked models that are not recommended by a prevedible baseline. In our case the baseline was MostPop. $$\frac{| \text{Recommended items} \cup \text{Recommended items by most pop} |}{| \text{Recommended items} |}$$
 
