@@ -145,8 +145,7 @@ The hyper parameters that have been considered in the grid search are listed bel
 
 PGPR
 ```
-hidden
-``` : number of hidden units of each layer of the shared embedding neural network, that is used as a backbone by the actor and the critic prediction heads
+hidden : number of hidden units of each layer of the shared embedding neural network, that is used as a backbone by the actor and the critic prediction heads
 ent_weight: weight of the entropy loss that quantifies entropy in the action distribution
 CAFE
 embed_size: size of the embedding of entities and relations for neural modules employed by CAFE's symbolic model
