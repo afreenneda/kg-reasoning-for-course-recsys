@@ -79,13 +79,15 @@ Sampling can be employed by running ```sh
  create_dataset.sh
 ```
 script and specify the positional parameters:
-Markup : 1. dataset: {coco, mooper, mooccube}
-         2. sample_size: represent the amount of paths sampled for each user
-         3. n_hop: represent the fixed hop size for the paths sampled
-         4. n_proc: number of processors to employ for multiprocessing operations
+1. dataset: {coco, mooper, mooccube}
+2. sample_size: represent the amount of paths sampled for each user
+3. n_hop: represent the fixed hop size for the paths sampled
+4. n_proc: number of processors to employ for multiprocessing operations
+
 ```sh
 bash create_dataset.sh {dataset_name} {sample_size} {n_hop} {n_proc}
 ```
+
 ### Tokenizing
 Before training a PLM or PEARLM, tokenize the dataset, running from the top level:
 ```sh
