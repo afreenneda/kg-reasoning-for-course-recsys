@@ -57,7 +57,7 @@ def main(args):
 
     chosen_hyperparam_grid = {"act_dropout": [0], 
     "batch_size": [32], 
-    "dataset": [args.dataset],#["lfm1m", "ml1m"], 
+    "dataset": [args.dataset],
     "do_validation": [True], 
     "ent_weight":[ 0.001, 0.01], 
     "epochs": [40], 
