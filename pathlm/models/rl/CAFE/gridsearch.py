@@ -57,7 +57,7 @@ def main(args):
 
 
     chosen_hyperparam_grid = {"batch_size": [64], 
-           "dataset": [args.dataset],#['ml1m', 'lfm1m'] 
+           "dataset": [args.dataset], 
             "deep_module": [True], 
             "do_execute": [False], 
             "do_infer": [False], 
