@@ -39,7 +39,7 @@ def evaluate_rec_quality(dataset_name: str, topk_items: Dict[int, List[int]], te
                          k: int = 10, method_name=None, metrics: List[str] = REC_QUALITY_METRICS_TOPK) -> Tuple[Dict[str, float], Dict[str, List[float]]]:
     """
     This function computes all the recommendation quality metrics for a given set of topk items, please note that the topk items and test set are
-    expressed using the original ids of the dataset (e.g. the ids of the movies in the MovieLens dataset).
+    expressed using the original ids of the dataset (e.g. the course ids).
     """
     rec_quality_metrics = {metric: list() for metric in metrics}
     recommended_items_all_user_set = set()
