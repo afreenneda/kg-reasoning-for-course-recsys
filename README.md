@@ -135,7 +135,7 @@ This list collects the formulas and short descriptions of the metrics currently 
 
 #### Recommendation Quality
 - NDCG: The extent to which the recommended products are useful for the user. Weights the position of the item in the top-k. $$NDCG@k=\frac{DCG@k}{IDCG@k}$$ where: $$DCG@k=\sum_{i=1}^{k}\frac{rel_i}{log_2(i+1)}=rel_1+\sum_{i=2}^{k}\frac{rel_i}{log_2(i+1)}$$ $$IDCG@k = \text{sort descending}(rel)$$
-- MMR: The extent to which the first recommended product is useful for the user. $$MMR = \frac{1}{\text{first hit position}}$$
+- MRR: The extent to which the model recommends the most relevant courses at the top ranks. $$MRR = \frac{1}{N}sum_{i=1}^{N}\frac{1}{ranki}
 - Coverage: Proportion of items recommended among all the item catalog. $$\frac{| \text{Unique Recommended items}|}{| \text{Items in Catalog} |}$$
 - Diversity: Proportion of genres covered by the recommended items among the recommended items. $$\frac{| \text{Unique Genres} |}{| \text{Recommended items} |}$$
 - Novelty: Inverse of popularity of the items recommended to the user $$\frac{\sum_{i \in I}| 1 - \text{Pop}(i) |}{| \text{Recommended items} |}$$
@@ -187,37 +187,112 @@ PEARLM
 Optimal hyper parameters:
 Each model is configured with a set of optimal hyper parameters, according to the dataset upon which it is trained. In order to train a given model with customized hyper parameters, it is necessary to set them from command line. Each can be set by adding as new command line arguments the pair (--param_name param_value) while also specifying the model_name and the dataset to use.
 
+#### COCO
 PGPR
- - hidden [512,256]
- - ent_weight 0.001
+ - hidden [256,128]
+ - ent_weight 0.01
 
 CAFE
  - embed_size 200
- - rank_weight 1.0
+ - rank_weight 10.0
 
 KGAT
  - adj_type si
- - embed_size 64
- - kge_size 64
+ - embed_size 128
+ - kge_size 128
 
 CKE
  - adj_type si
- - embed_size 64
- - kge_size 64
+ - embed_size 32
+ - kge_size 32
 
 PLM
- - num_epochs: 5
+ - num_epochs: 3
  - model: distilgpt2
- - batch_size: 512
+ - batch_size: 128
  - sample_size: 250
  - n_hop: 3
  - logit_processor_type: Decoding strategy empty for PLM
  - n_seq_infer: 30
 
 PEARLM
- - num_epochs: 5
+ - num_epochs: 3
  - model: distilgpt2
- - batch_size: 512
+ - batch_size: 128
+ - sample_size: 250
+ - n_hop: 3
+ - logit_processor_type: Decoding strategy 'gcd'
+ - n_seq_infer: 30
+
+#### MOOPer
+PGPR
+ - hidden [256,128]
+ - ent_weight 0.01
+
+CAFE
+ - embed_size 200
+ - rank_weight 10.0
+
+KGAT
+ - adj_type si
+ - embed_size 128
+ - kge_size 128
+
+CKE
+ - adj_type si
+ - embed_size 32
+ - kge_size 32
+
+PLM
+ - num_epochs: 3
+ - model: distilgpt2
+ - batch_size: 128
+ - sample_size: 250
+ - n_hop: 3
+ - logit_processor_type: Decoding strategy empty for PLM
+ - n_seq_infer: 30
+
+PEARLM
+ - num_epochs: 3
+ - model: distilgpt2
+ - batch_size: 128
+ - sample_size: 250
+ - n_hop: 3
+ - logit_processor_type: Decoding strategy 'gcd'
+ - n_seq_infer: 30
+
+#### MOOCCube
+PGPR
+ - hidden [256,128]
+ - ent_weight 0.01
+
+CAFE
+ - embed_size 200
+ - rank_weight 10.0
+
+KGAT
+ - adj_type si
+ - embed_size 128
+ - kge_size 128
+
+CKE
+ - adj_type si
+ - embed_size 128
+ - kge_size 128
+
+PLM
+ - num_epochs: 3
+ - model: distilgpt2
+ - batch_size: 128
+ - sample_size: 250
+ - n_hop: 3
+ - logit_processor_type: Decoding strategy empty for PLM
+ - n_seq_infer: 30
+
+PEARLM
+ - num_epochs: 3
+ - model: distilgpt2
+ - batch_size: 128
  - sample_size: 250
  - n_hop: 3
  - logit_processor_type: Decoding strategy 'gcd'
