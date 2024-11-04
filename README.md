@@ -135,7 +135,7 @@ This list collects the formulas and short descriptions of the metrics currently 
 
 #### Recommendation Quality
 - NDCG: The extent to which the recommended products are useful for the user. Weights the position of the item in the top-k. $$NDCG@k=\frac{DCG@k}{IDCG@k}$$ where: $$DCG@k=\sum_{i=1}^{k}\frac{rel_i}{log_2(i+1)}=rel_1+\sum_{i=2}^{k}\frac{rel_i}{log_2(i+1)}$$ $$IDCG@k = \text{sort descending}(rel)$$
-- MRR: The extent to which the model recommends the most relevant courses at the top ranks. $$MRR = \frac{1}{N}sum_{i=1}^{N}\frac{1}{ranki}
+- MRR: The extent to which the model recommends the most relevant courses at the top ranks. $$MRR = \frac{1}{N}sum_{i=1}^{N}\frac{1}{ranki}$$
 - Coverage: Proportion of items recommended among all the item catalog. $$\frac{| \text{Unique Recommended items}|}{| \text{Items in Catalog} |}$$
 - Diversity: Proportion of genres covered by the recommended items among the recommended items. $$\frac{| \text{Unique Genres} |}{| \text{Recommended items} |}$$
 - Novelty: Inverse of popularity of the items recommended to the user $$\frac{\sum_{i \in I}| 1 - \text{Pop}(i) |}{| \text{Recommended items} |}$$
