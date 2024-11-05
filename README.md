@@ -180,7 +180,7 @@ This list collects the formulas and short descriptions of the metrics currently 
   Given a user $u$ with a top-k list of recommended products $\( \tilde{P}_u \)$ and the corresponding explanation paths $\( \hat{L}_u \)$                        
   
   let $$\( 𝜔_{\hat{L}_u} = \{ 𝜔_l \mid l \in \hat{L}_u \} \)$$ be the set of unique path types in the explanations for the recommended list. ETD is calculated as:  
-![ETD Formula](https://latex.codecogs.com/png.latex?\text{ETD}(\tilde{L}_u)%20=%20\frac{|\omega%20\hat{L}_u|}{\min(k,%20|\omega%20L|)})
+            ![ETD Formula](https://latex.codecogs.com/png.latex?\text{ETD}(\tilde{L}_u)%20=%20\frac{|\omega%20\hat{L}_u|}{\min(k,%20|\omega%20L|)})
 
   Here, $L$ represents the set of all possible paths between users and products, and $𝜔_L$ is the set of all possible explanation types. ETD values range from $0$ to $1$, where values close to 0 indicate low diversity and values close to 1 indicate high diversity of explanation types for the recommended products.
 
