@@ -161,10 +161,8 @@ This list collects the formulas and short descriptions of the metrics currently 
   Given a user $u$, a set of entity popularity lists $\( E_{\lambda} \)$ $(sorted by popularity for each entity type \( \lambda \))$, and a set of reasoning paths 
   $\( \tilde{L}^k_u \)$ selected to explain the recommended products $\( \tilde{P}_u \)$, where $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, SEP is defined as:
 
-  $$
-  \text{SEP}(\tilde{L}^k_u) = \frac{1}{|\tilde{L}^k_u|} \sum_{l=\{e_0 \xleftarrow{r_1} \ldots \xleftarrow{r_k} e_k\} \in \tilde{L}^k_u} \text{EP}(e_{k-1}, v) 
-  \quad \text{where} \quad (e_{k-1}, v) \in E_{\lambda}
-  $$
+  $$\text{SEP}(\tilde{L}^k_u) = \frac{1}{|\tilde{L}^k_u|} \sum_{l=\{e_0 \xleftarrow{r_1} \ldots \xleftarrow{r_k} e_k\} \in \tilde{L}^k_u} \text{EP}(e_{k-1}, v) 
+  \quad \text{where} \quad (e_{k-1}, v) \in E_{\lambda}$$
   
   Here, $\( e_{k-1} \)$ is the shared entity in the reasoning path, and $v$ represents its popularity score in $\( E_{\lambda} \)$. SEP values range from $0$ to 
   $1$, with values close to 0 indicating low popularity and values near 1 indicating high popularity for shared entities.
@@ -173,10 +171,8 @@ This list collects the formulas and short descriptions of the metrics currently 
   Given a user $u$ and a set of reasoning paths $\( \tilde{L}^k_u \)$ chosen to explain the recommended products $\( \tilde{P}_u \)$, where $\( |\tilde{L}^k_u| = 
   |\tilde{P}_u| \)$, the SED is defined as:
 
-  $$
-  \text{SED}(\tilde{L}^k_u) = \frac{\left| \{ e_{k-1} \mid \forall l = \{ e_0 \xleftarrow{r_1} \ldots \xleftarrow{r_k} e_k \} \in \tilde{L}^k_u \} \right|} 
-  {|\tilde{L}^k_u|}
-  $$
+  $$\text{SED}(\tilde{L}^k_u) = \frac{\left| \{ e_{k-1} \mid \forall l = \{ e_0 \xleftarrow{r_1} \ldots \xleftarrow{r_k} e_k \} \in \tilde{L}^k_u \} \right|} 
+  {|\tilde{L}^k_u|}$$
   Here, $\( e_{k-1} \)$ represents the shared entity in each reasoning path. SED values range from $0$ to $1$, with values close to 0 indicating low diversity and 
   values close to 1 indicating high diversity of shared entities in the explanation paths.
 - Explanation Type Diversity(ETD): Quantifies the diversity of explanation types for the recommended products provided to a user.
