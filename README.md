@@ -155,7 +155,15 @@ This list collects the formulas and short descriptions of the metrics currently 
 - **Entity Type Diversity (ETD)**: Quantifies the diversity of explanation types accompanying the recommended products. For a user \( u \) with a top-\( k \) list of recommended products \( \tilde{P}_u \) and corresponding explanation paths \( \hat{L}_u \), let \( \omega_{\hat{L}_u} = \{\omega_l \mid l \in \hat{L}_u \} \) represent the set of path types in the explanations. ETD is computed as:
 
   $$\text{ETD}(\tilde{L}_u) = \frac{|\omega_{\hat{L}_u}|}{\min(k, |\omega_L|)}$$
-  where \( L \) is the set of all paths between users and products. ETD values range from \( (0, 1] \), with values near 0 indicating low explanation type diversity and values near 1 indicating high diversity.
+  where \( L \) is the set of all paths between users and products. ETD values range from \( (0, 1] \), with values near 0 indicating low explanation type diversity and values near 1 indicating high diversity
+
+   **Linked Interaction Recency (LIR)**: Measures the recency of a linking interaction in an explanation path using an exponentially weighted moving average of interaction timestamps. For a user \( u \) and interaction \( (p_i, t_i) \):
+
+  $$
+  \text{LIR}(p_i, t_i) = (1 - \beta_{\text{LIR}}) \cdot \text{LIR}(p_{i-1}, t_{i-1}) + \beta_{\text{LIR}} \cdot t_i
+  $$
+
+  where \( \beta_{\text{LIR}} \in [0, 1] \) is a decay factor associated with the interaction time, and \( \text{LIR}(p_1, t_1) = t_1 \).
 
 
 #### Hyper parameters
