@@ -143,13 +143,19 @@ This list collects the formulas and short descriptions of the metrics currently 
 - Diversity: Proportion of genres covered by the recommended items among the recommended items. $$\frac{| \text{Unique Genres} |}{| \text{Recommended items} |}$$
 - Novelty: Inverse of the popularity of the items recommended to the user $$\frac{\sum_{i \in I}| 1 - \text{Pop}(i) |}{| \text{Recommended items} |}$$
 - Serendipity: Proportion of items that may be surprising for the user, calculated as the proportion of items recommended by the benchmarked models that are not recommended by a credible baseline. In our case the baseline was MostPop. $$\frac{| \text{Recommended items} \cup \text{Recommended items by most pop} |}{| \text{Recommended items} |}$$
-
 - Linking Interaction Recency(LIR): Measures the average recency of a user’s linking interactions in the selected reasoning paths used to explain recommended products.
   Given a user $u$, a chronologically sorted list of $u$’s interactions $T_u$, and a set of reasoning paths $\( \tilde{L}^k_u \)$ selected for explaining the recommended products $\( \tilde{P}_u \)$ with         
   $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, the LIR over the selected reasoning paths is defined as:
-  
   $$\text{LIR}(\tilde{L}^k_u) = \frac{1}{|\tilde{L}^k_u|} \sum_{l=\{e_0 \xleftarrow{r_1} e_1 \xleftarrow{r_2} \ldots\} \in \tilde{L}^k_u} \text{IR}(e_1, t) \quad \text{with } (e_1, t) \in T_u$$
-  where $\( \text{IR}(e_1, t) \)$ represents the interaction recency for entity $e_1$ at time $t$ in $T_u$. LIR values close to 0 indicate that the linking interactions are older, while values closer to 1 indicate more recent linking interactions.
+
+  where, $\( \text{IR}(e_1, t) \)$ represents the interaction recency for entity $e_1$ at time $t$ in $T_u$. LIR values close to 0 indicate that the linking interactions are older, while values closer to 1 indicate more recent linking interactions.
+- Linking Interaction Diversity(LID): Measures the diversity of entities encountered in the reasoning paths used to explain recommended products for a user.
+ Given a user $u$ and a set of reasoning paths $\( \tilde{L}^k_u \)$ selected to explain the recommended products $\( \tilde{P}_u \)$, where $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, LID is defined as:
+ $$\text{LID}(\tilde{L}^k_u) = \frac{|\{e_1 \mid \forall l = \{e_0 \xleftarrow{r_1} e_1 \xleftarrow{r_2} \ldots\} \in \tilde{L}^k_u\}|}{|\tilde{L}^k_u|}$$
+
+  where $e_1$ represents unique entities in the reasoning paths. LID values range from [0, 1], with values close to 0 indicating low diversity in linking interactions, and values closer to 1 indicating high diversity.
+
+
 
 
   **Consumer Fairness:** Is defined as demographic parity for metric $Q$. $G$ is the set of demographic class (e.g. Gender group), while $g$ is the demographic groups grouping user by their attribute (e.g. Male, Female).
