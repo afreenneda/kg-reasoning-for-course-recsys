@@ -149,14 +149,14 @@ This list collects the formulas and short descriptions of the metrics currently 
 
   $$\text{LIR}(\tilde{L}^k_u) = \frac{1}{|\tilde{L}^k_u|} \sum_{l=\{e_0 \xleftarrow{r_1} e_1 \xleftarrow{r_2} \ldots\} \in \tilde{L}^k_u} \text{IR}(e_1, t) \quad \text{with } (e_1, t) \in T_u$$
 
-  where, $\( \text{IR}(e_1, t) \)$ represents the interaction recency for entity $e_1$ at time $t$ in $T_u$. LIR values close to 0 indicate that the linking interactions are older, while values closer to 1 indicate more recent linking interactions.
+  where $\( \text{IR}(e_1, t) \)$ represents the interaction recency for entity $e_1$ at time $t$ in $T_u$. LIR values close to 0 indicate that the linking interactions are older, while values closer to 1 indicate more recent linking interactions.
 - Linking Interaction Diversity(LID): Measures the diversity of entities encountered in the reasoning paths used to explain recommended products for a user.
  Given a user $u$ and a set of reasoning paths $\( \tilde{L}^k_u \)$ selected to explain the recommended products $\( \tilde{P}_u \)$, where $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, LID is defined as:
  $$\text{LID}(\tilde{L}^k_u) = \frac{|\{e_1 \mid \forall l = \{e_0 \xleftarrow{r_1} e_1 \xleftarrow{r_2} \ldots\} \in \tilde{L}^k_u\}|}{|\tilde{L}^k_u|}$$
 
   where $e_1$ represents unique entities in the reasoning paths. LID values range from [0, 1], with values close to 0 indicating low diversity in linking interactions, and values closer to 1 indicating high diversity.
 - Shared Entity Popularity(SEP): Quantifies the popularity of shared entities involved in the reasoning paths that explain recommended products for a user.
-  Given a user $u$, a set of entity popularity lists $\( E_{\lambda} \)$ (sorted by popularity for each entity type $\( \lambda \))$, and a set of reasoning paths $\( \tilde{L}^k_u \)$ selected to explain the recommended products $\( \tilde{P}_u \)$, where $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, SEP is defined as:
+  Given a user $u$, a set of entity popularity lists $\( E_{\lambda} \)$ $(sorted by popularity for each entity type \( \lambda \))$, and a set of reasoning paths $\( \tilde{L}^k_u \)$ selected to explain the recommended products $\( \tilde{P}_u \)$, where $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, SEP is defined as:
 
   $$
   \text{SEP}(\tilde{L}^k_u) = \frac{1}{|\tilde{L}^k_u|} \sum_{l=\{e_0 \xleftarrow{r_1} \ldots \xleftarrow{r_k} e_k\} \in \tilde{L}^k_u} \text{EP}(e_{k-1}, v) \quad \text{where} \quad (e_{k-1}, v) \in E_{\lambda}
@@ -166,10 +166,13 @@ This list collects the formulas and short descriptions of the metrics currently 
 - Shared Entity Diversity(SED): Measures the diversity of shared entities across the reasoning paths used to explain recommended products.
   Given a user $u$ and a set of reasoning paths $\( \tilde{L}^k_u \)$ chosen to explain the recommended products $\( \tilde{P}_u \)$, where $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, the SED is defined as:
 
-  $$\text{SED}(\tilde{L}^k_u) = \frac{\left| \{ e_{k-1} \mid \forall l = \{ e_0 \xleftarrow{r_1} \ldots \xleftarrow{r_k} e_k \} \in \tilde{L}^k_u \} \right|}{|\tilde{L}^k_u|}$$
-  Here, $\( e_{k-1} \)$ represents the shared entity in each reasoning path $\( l \)$. SED values range from $0$ to $1$, with values close to 0 indicating low diversity and values close to 1 indicating high diversity of shared entities in the explanation paths.
+  $$
+  \text{SED}(\tilde{L}^k_u) = \frac{\left| \{ e_{k-1} \mid \forall l = \{ e_0 \xleftarrow{r_1} \ldots \xleftarrow{r_k} e_k \} \in \tilde{L}^k_u \} \right|}{|\tilde{L}^k_u|}
+  $$
+  Here, $\( e_{k-1} \)$ represents the shared entity in each reasoning path. SED values range from $0$ to $1$, with values close to 0 indicating low diversity and values close to 1 indicating high diversity of shared entities in the explanation paths.
 - Explanation Type Diversity(ETD): Quantifies the diversity of explanation types for the recommended products provided to a user.
   Given a user $u$ with a top-$k$ list of recommended products $\( \tilde{P}_u \)$ and the corresponding explanation paths
+
   $\( \hat{L}_u \)$, let $\( \omega_{\hat{L}_u} = \{ \omega_l \mid l \in \hat{L}_u \} \)$ be the set of unique path types in the explanations for the recommended list. ETD is calculated as:
   $$
   \text{ETD}(\tilde{L}_u) = \frac{|\omega_{\hat{L}_u}|}{\min(k, |\omega_L|)}
