@@ -144,7 +144,7 @@ This list collects the formulas and short descriptions of the metrics currently 
 - Novelty: Inverse of the popularity of the items recommended to the user $$\frac{\sum_{i \in I}| 1 - \text{Pop}(i) |}{| \text{Recommended items} |}$$
 - Serendipity: Proportion of items that may be surprising for the user, calculated as the the proportion of items recommended by the benchmarked models that are not recommended by a credible baseline. In our case the baseline was MostPop. $$\frac{| \text{Recommended items} \cup \text{Recommended items by most pop} |}{| \text{Recommended items} |}$$
 - Linked Interaction Recency(LIR): Measures the recency of a linking interaction in an explanation path using an exponentially weighted moving average of interaction timestamps. For a user \( u \) and interaction \( (p_i, t_i) \): 
-\[\text{LIR}(p_i, t_i) = (1 - \beta_{\text{LIR}}) \cdot \text{LIR}(p_{i-1}, t_{i-1}) + \beta_{\text{LIR}} \cdot t_i\]
+$$\text{LIR}(p_i, t_i) = (1 - \beta_{\text{LIR}}) \cdot \text{LIR}(p_{i-1}, t_{i-1}) + \beta_{\text{LIR}} \cdot t_i$$
 where \( \beta_{\text{LIR}} \in [0, 1] \) is a decay factor associated with the interaction time, and \( \text{LIR}(p_1, t_1) = t_1 \).
 - Shared Entity Popularity(SEP): Quantifies the popularity of a shared entity in an explanation path based on its relationships in the Knowledge Graph (KG). For an entity \( e_i \) of type \( \lambda \) and interaction count \( v_i \):
 \[\text{SEP}(e_i, v_i) = (1 - \beta_{\text{SEP}}) \cdot \text{SEP}(e_{i-1}, v_{i-1}) + \beta_{\text{SEP}} \cdot v_i\]
