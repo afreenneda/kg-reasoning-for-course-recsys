@@ -182,7 +182,7 @@ This list collects the formulas and short descriptions of the metrics currently 
   let $$\( 𝜔_{\hat{L}_u} = \{ 𝜔_l \mid l \in \hat{L}_u \} \)$$ be the set of unique path types in the explanations for the recommended list. ETD is calculated as:
  
   \[
-   \text{ETD}(\tilde{L}_u) = \frac{|\omega \hat{L}_u|}{\min(k, |\omega L|)}
+  \text{ETD}(\tilde{L}_u) = \frac{|\omega \hat{L}_u|}{\min(k, |\omega L|)}
   \]
 
   
