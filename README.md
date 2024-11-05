@@ -357,4 +357,5 @@ PEARLM
 | E-KG   |CAFE | 0.13  |  0.10 | 0.03  |0.03 | 0.27 | 0.95 | 0.76 | 0.16   |
 | E-KG   |PLM | 0.10  |  0.08 | 0.02  |0.02 | 0.54 | 0.74 | 0.63 | 0.58   |
 | E-KG   |PEARLM | 0.39  |  0.33 | 0.10  |0.10 | 0.61 | 0.74 | 0.66 | 0.99   |
+
 *Families*: Traditional Collaborative Filtering(TCF); Non-Explainable Knowledge Graph(NE-KG); Explainable Knowledge Graph(E-KG)
