@@ -9,7 +9,8 @@
 pip install -r requirements.txt 
 ```
 
-Download the processed datasets and paths from here: [[**Link**](https://drive.google.com/drive/folders/17IJopOSlbkNJLmaenAZXP93mQ0HfHovt?usp=sharing)] 
+Download the processed datasets and paths from here: [[**Link**](https://drive.google.com/drive/folders/17IJopOSlbkNJLmaenAZXP93mQ0HfHovt?usp=sharing)]
+
 Then extract **data** inside the **top level** of the repository (i.e. the level in which setup.py is located). 
 
 The base workflow is:
