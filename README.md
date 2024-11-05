@@ -145,11 +145,15 @@ This list collects the formulas and short descriptions of the metrics currently 
 - Serendipity: Proportion of items that may be surprising for the user, calculated as the proportion of items recommended by the benchmarked models that are not recommended by a credible baseline. In our case the baseline was MostPop. $$\frac{| \text{Recommended items} \cup \text{Recommended items by most pop} |}{| \text{Recommended items} |}$$
 
 - Linking Interaction Recency(LIR): Measures the average recency of a user’s linking interactions in the selected reasoning paths used to explain recommended products.
-  Given a user \( u \), a chronologically sorted list of \( u \)’s interactions \( T_u \), and a set of reasoning paths \( \tilde{L}^k_u \) selected for explaining the recommended products \( \tilde{P}_u \) with \( |\tilde{L}^k_u| = |\tilde{P}_u| \), the LIR over the selected reasoning paths is defined as:
-  $$
-  \text{LIR}(\tilde{L}^k_u) = \frac{1}{|\tilde{L}^k_u|} \sum_{l=\{e_0 \xleftarrow{r_1} e_1 \xleftarrow{r_2} \ldots\} \in \tilde{L}^k_u} \text{IR}(e_1, t) \quad \text{with } (e_1, t) \in T_u
-  $$
-  where \( \text{IR}(e_1, t) \) represents the interaction recency for entity \( e_1 \) at time \( t \) in \( T_u \). LIR values close to 0 indicate that the linking interactions are older, while values closer to 1 indicate more recent linking interactions.
+  Given a user $u$, a chronologically sorted list of $u$’s interactions $T_u$, and a set of reasoning paths $\( \tilde{L}^k_u \)$ selected for explaining the recommended products $\( \tilde{P}_u \)$ with         
+  $\( |\tilde{L}^k_u| = |\tilde{P}_u| \)$, the LIR over the selected reasoning paths is defined as:
+  
+  $$\text{LIR}(\tilde{L}^k_u) = \frac{1}{|\tilde{L}^k_u|} \sum_{l=\{e_0 \xleftarrow{r_1} e_1 \xleftarrow{r_2} \ldots\} \in \tilde{L}^k_u} \text{IR}(e_1, t) \quad \text{with } (e_1, t) \in T_u$$
+  where $\( \text{IR}(e_1, t) \)$ represents the interaction recency for entity $e_1$ at time $t$ in $T_u$. LIR values close to 0 indicate that the linking interactions are older, while values closer to 1 indicate more recent linking interactions.
+
+
+  **Consumer Fairness:** Is defined as demographic parity for metric $Q$. $G$ is the set of demographic class (e.g. Gender group), while $g$ is the demographic groups grouping user by their attribute (e.g. Male, Female).
+$$\Delta Q (G_1, G_2, Q) = \frac{1}{|G_1|} \sum_{u \in G_1} Q(u) - \mathop{} \frac{1}{|G_2|} \sum_{u \in G_2} Q(u)$$
 
 #### Hyper parameters
 The hyper parameters that have been considered in the grid search are listed below, alongside a brief description and the codename used in the experiments:
