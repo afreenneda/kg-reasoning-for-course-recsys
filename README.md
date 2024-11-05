@@ -176,9 +176,9 @@ This list collects the formulas and short descriptions of the metrics currently 
   Here, $\( e_{k-1} \)$ represents the shared entity in each reasoning path. SED values range from $0$ to $1$, with values close to 0 indicating low diversity and 
   values close to 1 indicating high diversity of shared entities in the explanation paths.
 - Explanation Type Diversity(ETD): Quantifies the diversity of explanation types for the recommended products provided to a user.
-  Given a user $u$ with a top-$k$ list of recommended products $\( \tilde{P}_u \)$ and the corresponding explanation paths
+  Given a user $u$ with a top-k list of recommended products $\( \tilde{P}_u \)$ and the corresponding explanation paths
   
-  $\( \hat{L}_u \)$, let $\( \omega_{\hat{L}_u} = \{ \omega_l \mid l \in \hat{L}_u \} \)$ be the set of unique path types in the explanations for the recommended 
+  \( \hat{L}_u \), let \( \omega_{\hat{L}_u} = \{ \omega_l \mid l \in \hat{L}_u \} \) be the set of unique path types in the explanations for the recommended 
   list. ETD is calculated as:
   $$\text{ETD}(\tilde{L}_u) = \frac{|\omega_{\hat{L}_u}|}{\min(k, |\omega_L|)}$$
   Here, $L$ represents the set of all possible paths between users and products, and $\( \omega_L \)$ is the set of all possible explanation types. ETD values 
