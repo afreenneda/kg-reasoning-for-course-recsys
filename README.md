@@ -182,6 +182,18 @@ This list collects the formulas and short descriptions of the metrics currently 
   let $$\( 𝜔_{\hat{L}_u} = \{ 𝜔_l \mid l \in \hat{L}_u \} \)$$ be the set of unique path types in the explanations for the recommended list. ETD is calculated as:  
 ![ETD Formula](https://latex.codecogs.com/png.latex?\text{ETD}(\tilde{L}_u)%20=%20\frac{|\omega%20\hat{L}_u|}{\min(k,%20|\omega%20L|)})
 
+### Linking Interaction Recency (LIR):
+![LIR Formula](https://latex.codecogs.com/png.latex?\text{LIR}(L_u^k)%20=%20\frac{1}{|L_u^k|}%20\sum_{l=e_0%20\leftarrow%20r_1%20e_1%20\leftarrow%20r_2%20\ldots%20\in%20L_u^k}%20IR(e_1,%20t))
+
+### Linking Interaction Diversity (LID):
+![LID Formula](https://latex.codecogs.com/png.latex?\text{LID}(L_u^k)%20=%20\frac{|\{e_1%20\mid%20\forall%20l=e_0%20\leftarrow%20r_1%20e_1%20\leftarrow%20r_2%20\ldots%20\in%20L_u^k\}|}{|L_u^k|})
+
+### Shared Entity Popularity (SEP):
+![SEP Formula](https://latex.codecogs.com/png.latex?\text{SEP}(L_u^k)%20=%20\frac{1}{|L_u^k|}%20\sum_{l=e_0%20\leftarrow%20r_1%20\ldots%20\leftarrow%20r_k%20e_k%20\in%20L_u^k}%20EP(e_k-1,%20v))
+
+### Shared Entity Diversity (SED):
+![SED Formula](https://latex.codecogs.com/png.latex?\text{SED}(L_u^k)%20=%20\frac{|\{
+
 
   
   Here, $L$ represents the set of all possible paths between users and products, and $𝜔_L$ is the set of all possible explanation types. ETD values range from $0$ to $1$, where values close to 0 indicate low diversity and values close to 1 indicate high diversity of explanation types for the recommended products.
